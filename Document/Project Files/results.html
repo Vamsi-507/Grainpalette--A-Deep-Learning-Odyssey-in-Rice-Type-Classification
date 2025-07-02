@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- ✅ Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">RiceType</div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/" onclick="return scrollToSection('about')">About</a></li>
+      <li><a href="/" onclick="return scrollToSection('testimonials')">Testimonials</a></li>
+      <li><a href="/" onclick="return scrollToSection('contact')">Contact</a></li>
+      <li><a href="/details">Predict</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Prediction Result Section -->
+  <section class="result" style="text-align: center; padding: 50px;">
+    <h1>Prediction Result</h1>
+    <p><strong>Predicted Rice Type:</strong> {{ prediction_text }}</p>
+
+    {% if image_file %}
+      <img src="{{ url_for('static', filename=image_file) }}" alt="Uploaded Image" width="300">
+    {% else %}
+      <p>No image found.</p>
+    {% endif %}
+
+    <br><br>
+    <a href="/details"><button class="btn">Try Another</button></a>
+  </section>
+
+  <script>
+    function scrollToSection(id) {
+      sessionStorage.setItem('scrollTarget', id);
+      return true;
+    }
+  </script>
+
+</body>
+</html>

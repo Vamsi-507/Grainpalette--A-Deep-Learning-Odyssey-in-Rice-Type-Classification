@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Rice Image</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- ✅ Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">RiceType</div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/" onclick="return scrollToSection('about')">About</a></li>
+      <li><a href="/" onclick="return scrollToSection('testimonials')">Testimonials</a></li>
+      <li><a href="/" onclick="return scrollToSection('contact')">Contact</a></li>
+      <li><a href="/details">Predict</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Upload Form -->
+  <section class="predict-section">
+    <h2>Upload a Rice Image</h2>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      <label for="image">Select an image file:</label><br><br>
+      <input type="file" id="image" name="image" accept="image/*" required><br><br>
+      <input type="submit" value="Upload">
+    </form>
+  </section>
+
+  <script>
+    function scrollToSection(id) {
+      sessionStorage.setItem('scrollTarget', id);
+      return true;
+    }
+  </script>
+
+</body>
+</html>

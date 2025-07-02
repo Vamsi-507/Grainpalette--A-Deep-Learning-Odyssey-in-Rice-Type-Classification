@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rice Type Detection</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">RiceType</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#" onclick="showSection('about')">About</a></li>
+      <li><a href="#" onclick="showSection('testimonials')">Testimonials</a></li>
+      <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+      <li><a href="/details">Predict</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero section" id="hero">
+    <div class="hero-text">
+      <h1>Welcome to Rice Type Detection</h1>
+      <p>This model can detect rice type based on rice images.</p>
+      <a href="/details" class="btn">Predict</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about" style="display:none;">
+    <h2>About the Rice Type Classification Model</h2>
+    <p>This model is built using MobileNetV2 and trained on labeled images of rice.</p>
+    <div class="features">
+      <div class="feature"><h3>High Accuracy</h3><p>97% prediction accuracy.</p></div>
+      <div class="feature"><h3>Rice Types</h3><p>Detects 5 types of rice.</p></div>
+      <div class="feature"><h3>Dataset</h3><p>Dataset from Kaggle.</p></div>
+      <div class="feature"><h3>Technology</h3><p>Built with Transfer Learning.</p></div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials section" id="testimonials" style="display:none;">
+    <div class="testimonial">
+      <img src="../static/user.png" alt="User">
+      <h3>Matt Brandon</h3>
+      <p>Wholesaler</p>
+      <blockquote>This tool helps me verify rice before buying it from farmers.</blockquote>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact" style="display:none;">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <div><h3>Address</h3><p>A108 Adam Street, Pune, India</p></div>
+      <div><h3>Email</h3><p>info@example.com</p></div>
+      <div><h3>Phone</h3><p>+91 55892 55488</p></div>
+    </div>
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <input type="text" placeholder="Subject">
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
